@@ -1,9 +1,7 @@
 package camp.xit.kiwi.codelist
 
 import com.fasterxml.jackson.annotation.JsonInclude
-import com.fasterxml.jackson.annotation.JsonTypeInfo
 import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.springframework.boot.SpringApplication
@@ -20,10 +18,6 @@ open class Application {
             .featuresToDisable(SerializationFeature.WRAP_ROOT_VALUE,
                     SerializationFeature.WRITE_DATES_AS_TIMESTAMPS,
                     DeserializationFeature.UNWRAP_ROOT_VALUE)
-//            .defaultTyping(ObjectMapper.DefaultTypeResolverBuilder(ObjectMapper.DefaultTyping.NON_FINAL)
-//                    .init(JsonTypeInfo.Id.NAME, null)
-//                    .inclusion(JsonTypeInfo.As.PROPERTY)
-//                    .typeProperty("class"))
             .serializationInclusion(JsonInclude.Include.NON_EMPTY)
 }
 
