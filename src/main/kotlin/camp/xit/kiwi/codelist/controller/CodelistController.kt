@@ -10,6 +10,6 @@ class CodelistController {
 
     @GetMapping("/api/v1/codelist/{code}")
     fun getCodelist(@PathVariable code: String) =
-            listOf(CodelistEntry("PICA"), CodelistEntry("KOKOT"))
+            listOf(CodelistEntry("MGR"), CodelistEntry("DOC"), CodelistEntry("PROF"))
 
 }
